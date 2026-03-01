@@ -151,78 +151,99 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Contact Form Handling with Formspree
-    const contactForm = document.getElementById('contactForm');
     
-    if (contactForm) {
-        contactForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const nameInput = document.getElementById('name');
-            const emailInput = document.getElementById('email');
-            const messageInput = document.getElementById('message');
-            
-            const name = nameInput ? nameInput.value : '';
-            const email = emailInput ? emailInput.value : '';
-            const message = messageInput ? messageInput.value : '';
-            
-            // Validate form data
-            if (!name || !email || !message) {
-                showNotification('❌ Please fill in all fields', 'error');
-                return;
+    // Contact Form Handling with Formspree
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Get form data - with better error checking
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const messageInput = document.getElementById('message');
+        
+        // Check if elements exist
+        if (!nameInput || !emailInput || !messageInput) {
+            console.error('Form inputs not found!');
+            showNotification('❌ Form error. Please refresh the page.', 'error');
+            return;
+        }
+        
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const message = messageInput.value.trim();
+        
+        // Debug: Log the values
+        console.log('Name:', name);
+        console.log('Email:', email);
+        console.log('Message:', message);
+        
+        // Validate form data
+        if (!name || !email || !message) {
+            showNotification('❌ Please fill in all fields', 'error');
+            return;
+        }
+        
+        // Validate email format
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            showNotification('❌ Please enter a valid email address', 'error');
+            return;
+        }
+        
+        // Show loading state
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+
+        try {
+            // Send to Formspree
+            const response = await fetch('https://formspree.io/f/xlgwkllk', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    message: message,
+                    _replyto: email,
+                    _subject: `New message from ${name} - Web CV`
+                })
+            });
+
+            const result = await response.json();
+            console.log('Formspree response:', result);
+
+            if (response.ok) {
+                // Show success message
+                showNotification('✅ Message sent successfully! I\'ll get back to you soon.', 'success');
+                contactForm.reset();
+            } else {
+                throw new Error(result.error || 'Something went wrong');
             }
+        } catch (error) {
+            // Show error message
+            console.error('Form error:', error);
+            showNotification('❌ Failed to send message. Please email me directly.', 'error');
             
-            // Show loading state
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-
-            try {
-                // Send to Formspree - CORRECT URL
-                const response = await fetch('https://formspree.io/f/xlgwkllk', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        name: name,
-                        email: email,
-                        message: message,
-                        _replyto: email,
-                        _subject: `New message from ${name} - Web CV`
-                    })
-                });
-
-                const result = await response.json();
-                console.log('Formspree response:', result);
-
-                if (response.ok) {
-                    // Show success message
-                    showNotification('✅ Message sent successfully! I\'ll get back to you soon.', 'success');
-                    contactForm.reset();
-                } else {
-                    throw new Error(result.error || 'Something went wrong');
+            // Show direct email option as fallback
+            setTimeout(() => {
+                if (confirm('Would you like to send an email directly instead?')) {
+                    window.location.href = `mailto:zukisanxesi4@gmail.com?subject=Contact from ${name}&body=${encodeURIComponent(message)}%0A%0AFrom: ${email}`;
                 }
-            } catch (error) {
-                // Show error message
-                console.error('Form error:', error);
-                showNotification('❌ Failed to send message. Please email me directly.', 'error');
-                
-                // Show direct email option as fallback
-                setTimeout(() => {
-                    if (confirm('Would you like to send an email directly instead?')) {
-                        window.location.href = `mailto:zukisanxesi4@gmail.com?subject=Contact from ${name}&body=${encodeURIComponent(message)}%0A%0AFrom: ${email}`;
-                    }
-                }, 1000);
-            } finally {
-                // Reset button
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }
-        });
-    }
+            }, 1000);
+        } finally {
+            // Reset button
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }
+    });
+}
 
     // Notification function
     function showNotification(message, type = 'success') {
