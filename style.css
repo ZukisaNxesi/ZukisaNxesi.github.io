@@ -47,7 +47,42 @@ body.dark-mode .objective-card {
     background: #1e293b;
     color: var(--white);
 }
+/* Fix Dark Mode Text Colors */
+.dark-mode .soft-skill {
+    background: #2d2d2d;
+    border: 1px solid #404040;
+}
 
+.dark-mode .soft-skill h4 {
+    color: #ffffff !important;
+}
+
+.dark-mode .soft-skill i {
+    color: #667eea;
+}
+
+/* Also fix any other potential text issues in dark mode */
+.dark-mode .project-item,
+.dark-mode .course-category,
+.dark-mode .edu-card,
+.dark-mode .profile-content,
+.dark-mode .objective-card {
+    color: #e0e0e0;
+}
+
+.dark-mode .project-item h3,
+.dark-mode .course-category h4,
+.dark-mode .edu-card h3,
+.dark-mode .objective-card h3 {
+    color: #ffffff;
+}
+
+.dark-mode .project-item p,
+.dark-mode .course-category li,
+.dark-mode .edu-card p,
+.dark-mode .profile-content p {
+    color: #cccccc;
+}
 /* Navigation */
 .navbar {
     position: fixed;
