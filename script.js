@@ -146,16 +146,112 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Contact Form Handling
-    const contactForm = document.getElementById('contactForm');
+    // Contact Form Handling with Formspree
+const contactForm = document.getElementById('contactForm');
+
+contactForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
     
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
+    // Get form data
+    const formData = new FormData(contactForm);
+    const data = Object.fromEntries(formData);
+    
+    // Show loading state
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+
+    try {
+        // Send to Formspree (REPLACE WITH YOUR FORMSPREE URL)
+        const response = await fetch('https://formspree.io/f/YOUR_FORM_ID_HERE', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+            // Show success message
+            showNotification('✅ Message sent successfully! I\'ll get back to you soon.', 'success');
+            contactForm.reset();
+        } else {
+            throw new Error('Something went wrong');
+        }
+    } catch (error) {
+        // Show error message
+        showNotification('❌ Failed to send message. Please try again or email me directly.', 'error');
+        console.error('Form error:', error);
+    } finally {
+        // Reset button
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    }
+});
+
+// Add notification function
+function showNotification(message, type = 'success') {
+    // Check if notification container exists, if not create it
+    let notification = document.querySelector('.notification');
+    
+    if (!notification) {
+        notification = document.createElement('div');
+        notification.className = 'notification';
+        document.body.appendChild(notification);
+    }
+    
+    notification.textContent = message;
+    notification.className = `notification ${type}`;
+    notification.style.display = 'block';
+    
+    // Add styles for notification
+    const style = document.createElement('style');
+    style.textContent = `
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            color: white;
+            font-weight: 500;
+            z-index: 10000;
+            animation: slideIn 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
         
-        // Here you would typically send the form data to a server
-        // For now, we'll just show a success message
-        alert('Thank you for your message! I will get back to you soon.');
-        this.reset();
-    });
+        .notification.success {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+        
+        .notification.error {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    `;
+    
+    if (!document.querySelector('#notification-style')) {
+        style.id = 'notification-style';
+        document.head.appendChild(style);
+    }
+    
+    // Auto hide after 5 seconds
+    setTimeout(() => {
+        notification.style.display = 'none';
+    }, 5000);
+}
 
     // Add active class to nav links on scroll
     const sections = document.querySelectorAll('section');
