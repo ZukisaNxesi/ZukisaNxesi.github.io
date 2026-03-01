@@ -1,0 +1,10 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Node modules (if any)
+node_modules/
