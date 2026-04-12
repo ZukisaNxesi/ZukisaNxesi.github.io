@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     <div class="section">
                         <h2>EDUCATION</h2>
-                        <h3>North-West University – Bachelor of Science in Information Technology (2023-2025)</h3>
+                        <h3>North-West University – Bachelor of Science in Information Technology- Bachelor's degree certificate (2023-2025)</h3>
                         <h3>Mvenyane Senior Secondary School – National Senior Certificate (2018-2022)</h3>
                     </div>
                     
