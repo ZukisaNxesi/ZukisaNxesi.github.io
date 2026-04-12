@@ -93,18 +93,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 </head>
                 <body>
                     <h1>ZUKISA NXESI</h1>
-                    <p>Bachelor of Science in Information Technology (BSc IT) – Graduand</p>
+                    <p>Bachelor of Science in Information Technology (BSc IT) – Graduate</p>
                     <p>North West University</p>
                     
                     <div class="contact">
                         <div>📞 071 664 4892</div>
                         <div>📧 zukisanxesi4@gmail.com</div>
-                        <div>📍 13th Avenue, Rooisand, Kathu</div>
+                        <div>📍 122 Cuckooshrike St, Rabie Ridge, Midrand 1688</div>
                     </div>
                     
                     <div class="section">
                         <h2>PROFESSIONAL PROFILE</h2>
-                        <p>Upcoming Information Technology graduate with a strong academic foundation in software development, system analysis and design, databases, and networking. Motivated, adaptable, and eager to contribute technical skills in a professional environment while continuously expanding knowledge.</p>
+                        <p>Information Technology graduate with a strong academic foundation in software development, system analysis and design, databases, and networking. Motivated, adaptable, and eager to contribute technical skills in a professional environment while continuously expanding knowledge.</p>
                     </div>
                     
                     <div class="section">
@@ -127,10 +127,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         <ul>
                             <li>• Student Management System - Full-stack app with authentication, dark mode, PDF reporting</li>
                             <li>• Click-KOS - GitHub project: https://github.com/ZukisaNxesi/click-kos</li>
+                            <li>• ZukiChat-A real-time chat application with user authentication, private messaging, and group chat features. Built with modern web technologies for seamless communication.</li>
+                            <li>• Shopping List App-A full-stack shopping list management app with user authentication, image uploads, and automatic price calculation. Create and manage multiple shopping lists.</li>
                             <li>• Developed software systems using Java, C++, and C#</li>
                             <li>• Designed and managed SQL databases with complex queries</li>
                             <li>• Built C# and Java applications using OOP principles</li>
                             <li>• Simulated computer networks using Cisco Packet Tracer</li>
+
                         </ul>
                     </div>
                     
