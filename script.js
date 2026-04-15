@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     <div class="section">
                         <h2>TECHNICAL SKILLS</h2>
-                        <p><strong>Programming:</strong> Java, Python, C++, C#, JavaScript,CSS, PERN Stack</p>
+                        <p><strong>Programming:</strong> Java, Python, C++, C#, JavaScript, CSS, PERN Stack</p>
                         <p><strong>Databases:</strong> MySQL, Database Design & Management</p>
                         <p><strong>AI/ML:</strong> Pandas, NumPy, NLTK, AI Fundamentals, Data Mining</p>
                         <p><strong>Tools:</strong> Git, GitHub, Visual Studio</p>
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     <div class="section">
                         <h2>CAREER OBJECTIVE</h2>
-                        <p>To obtain an entry-level position, internship, or graduate programme in IT where I can apply technical skills and AI knowledge.</p>
+                        <p>To obtain an entry-level position, internship, or graduate programme in Information Technology or Computer Science where I can apply my technical skills, AI knowledge, and gain practical industry experience while contributing to innovative solutions.</p>
                     </div>
                     <p><em>References available upon request.</em></p>
                 </body>
@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', function() {
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
-            if (pageYOffset >= sectionTop - 200) {
+            if (window.pageYOffset >= sectionTop - 200) {
                 current = section.getAttribute('id');
             }
         });
