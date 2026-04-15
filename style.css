@@ -1,4 +1,3 @@
-/* style.css */
 :root {
     --primary-color: #2563eb;
     --secondary-color: #1e40af;
@@ -47,7 +46,7 @@ body.dark-mode .objective-card {
     background: #1e293b;
     color: var(--white);
 }
-/* Fix Dark Mode Text Colors */
+
 .dark-mode .soft-skill {
     background: #2d2d2d;
     border: 1px solid #404040;
@@ -61,7 +60,6 @@ body.dark-mode .objective-card {
     color: #667eea;
 }
 
-/* Also fix any other potential text issues in dark mode */
 .dark-mode .project-item,
 .dark-mode .course-category,
 .dark-mode .edu-card,
@@ -83,6 +81,7 @@ body.dark-mode .objective-card {
 .dark-mode .profile-content p {
     color: #cccccc;
 }
+
 /* Navigation */
 .navbar {
     position: fixed;
@@ -336,6 +335,47 @@ body.dark-mode .objective-card {
 }
 
 /* Profile */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.dark-mode .profile-header {
+    background: #1e293b;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.profile-pic:hover {
+    transform: scale(1.02);
+}
+
+.profile-header-text {
+    flex: 1;
+}
+
+.profile-header-text h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
 .profile-content {
     background: white;
     padding: 2rem;
@@ -358,6 +398,33 @@ body.dark-mode .objective-card {
     box-shadow: var(--shadow);
     margin-bottom: 2rem;
     transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.school-logo {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    border-radius: 12px;
+    background: #f1f5f9;
+    padding: 8px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.dark-mode .school-logo {
+    background: #0f172a;
+}
+
+.school-logo:hover {
+    transform: scale(1.05);
+}
+
+.edu-content {
+    flex: 1;
 }
 
 .edu-card h3 {
@@ -371,8 +438,20 @@ body.dark-mode .objective-card {
     font-weight: 500;
 }
 
+.current-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    margin-left: 1rem;
+    vertical-align: middle;
+}
+
 .high-school {
-    margin-top: 2rem;
+    margin-top: 0;
 }
 
 .subsection-title {
@@ -555,6 +634,22 @@ body.dark-mode .objective-card {
 
 .project-link:hover {
     gap: 1rem;
+}
+
+.tech-tag {
+    display: inline-block;
+    background: #e2e8f0;
+    color: #1e293b;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.dark-mode .tech-tag {
+    background: #334155;
+    color: #e2e8f0;
 }
 
 /* Career Objective */
@@ -752,6 +847,16 @@ footer {
         width: 100%;
         text-align: center;
     }
+
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .edu-card {
+        flex-direction: column;
+        text-align: center;
+    }
 }
 
 @media (max-width: 480px) {
@@ -769,5 +874,128 @@ footer {
 
     .container {
         padding: 2rem 1rem;
+    }
+}
+/* Programming Languages with Icons */
+.skill-tags.with-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.skill-icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 1rem;
+    border-radius: 12px;
+    min-width: 80px;
+    transition: var(--transition);
+    cursor: default;
+}
+
+.skill-icon-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(37,99,235,0.3);
+}
+
+.skill-icon-item i {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.skill-icon-item span {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Dark mode - Keep background dark but icons visible */
+.dark-mode .skills-category {
+    background: #1e293b;
+    border: 1px solid #334155;
+}
+
+.dark-mode .skill-icon-item {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+}
+
+.dark-mode .skill-tags span:not(.skill-icon-item span) {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+}
+
+/* Regular skill tags (non-icon ones) */
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.skill-tags span {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.skill-tags span:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(37,99,235,0.3);
+}
+
+/* Dark mode text colors for category titles */
+.dark-mode .skills-category h3 {
+    color: #60a5fa;
+}
+
+.dark-mode .soft-skill {
+    background: #1e293b;
+    border: 1px solid #334155;
+}
+
+.dark-mode .soft-skill h4 {
+    color: #e2e8f0;
+}
+
+.dark-mode .soft-skill i {
+    color: #60a5fa;
+}
+
+/* Ensure all text in dark mode is readable */
+.dark-mode .skills-container,
+.dark-mode .skills-category {
+    color: #e2e8f0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .skill-icon-item {
+        min-width: 70px;
+        padding: 0.8rem;
+    }
+    
+    .skill-icon-item i {
+        font-size: 2rem;
+    }
+    
+    .skill-icon-item span {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .skill-tags.with-icons {
+        justify-content: center;
+    }
+    
+    .skill-icon-item {
+        min-width: 65px;
+        padding: 0.7rem;
     }
 }

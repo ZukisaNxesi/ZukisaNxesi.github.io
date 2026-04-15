@@ -37,7 +37,7 @@
         <div class="hero-content">
             <h1 class="animate-text">ZUKISA <span class="highlight">NXESI</span></h1>
             <h2 class="animate-text delay-1">Bachelor of Science in Information Technology (BSc IT) – Graduate</h2>
-            <p class="animate-text delay-2">North West University</p>
+            <p class="animate-text delay-2">North West University | University of Pretoria (Postgraduate)</p>
             <div class="hero-buttons animate-text delay-3">
                 <a href="#contact" class="btn primary">Hire Me</a>
                 <a href="#" class="btn secondary" id="downloadPdfBtn">Download CV (PDF)</a>
@@ -65,16 +65,25 @@
         </div>
         <div class="contact-item">
             <i class="fas fa-map-marker-alt"></i>
-            <span>13th Avenue, Rooisand, Kathu</span>
+            <span>122 Cuckooshrike St, Rabie Ridge, Midrand 1688</span>
         </div>
     </div>
 
-    <!-- Professional Profile -->
+    <!-- Professional Profile with Profile Picture -->
     <section id="profile" class="profile">
         <div class="container">
             <h2 class="section-title">PROFESSIONAL PROFILE</h2>
+            <!-- Profile Picture and Intro -->
+            <div class="profile-header">
+                <img src="images/profile.jpeg" alt="Zukisa Nxesi" class="profile-pic" id="profilePic">
+                <div class="profile-header-text">
+                    <h3>Zukisa Nxesi</h3>
+                    <p>BSc IT Graduate | Aspiring Software Developer</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Based in Midrand, South Africa</p>
+                </div>
+            </div>
             <div class="profile-content">
-                <p>Information Technology graduate with a strong academic foundation in software development, system analysis and design, databases, and networking. Motivated, adaptable, and eager to contribute technical skills in a professional environment while continuously expanding knowledge.</p>
+                <p>Information Technology graduate with a strong academic foundation in software development, system analysis and design, databases, and networking. Currently pursuing advanced studies at the University of Pretoria focusing on Artificial Intelligence, Data Mining, NLP, and Software Engineering. Motivated, adaptable, and eager to contribute technical skills in a professional environment while continuously expanding knowledge.</p>
             </div>
         </div>
     </section>
@@ -84,14 +93,39 @@
         <div class="container">
             <h2 class="section-title">EDUCATION</h2>
             
+            <!-- North-West University -->
             <div class="edu-card">
-                <h3>North-West University – Bachelor of Science in Information Technology</h3>
-                <p class="edu-date">2023-2025</p>
+                <img src="images/nwu-logo.png" alt="NWU Logo" class="school-logo">
+                <div class="edu-content">
+                    <h3>North-West University – Bachelor of Science in Information Technology</h3>
+                    <p class="edu-date">2023-2025 | Graduated</p>
+                </div>
             </div>
 
-            <h3 class="subsection-title">COURSES</h3>
+            <!-- University of Pretoria (Current) -->
+            <div class="edu-card">
+                <img src="images/up-logo.jpg" alt="University of Pretoria Logo" class="school-logo">
+                <div class="edu-content">
+                    <h3>University of Pretoria – Postgraduate / Honours in Computer Science (Current) <span class="current-badge">Current Student</span></h3>
+                    <p class="edu-date">2026 - Present</p>
+                </div>
+            </div>
+
+            <!-- High School -->
+            <div class="edu-card high-school">
+                <img src="images/mvenyane-logo.jpg" alt="Mvenyane Senior Secondary School Logo" class="school-logo" id="highSchoolLogo">
+                <div class="edu-content">
+                    <h3>Mvenyane Senior Secondary School – National Senior Certificate</h3>
+                    <p class="edu-date">2018-2022</p>
+                </div>
+            </div>
+
+            <!-- COURSES SECTION -->
+            <h3 class="subsection-title">COURSES & MODULES</h3>
+            
             <div class="courses-grid">
                 <div class="course-category">
+                    <h4>📘 North-West University (BSc IT)</h4>
                     <ul>
                         <li>Academic Literacy Development (ALDE111, ALDE122)</li>
                         <li>Introduction to Computing and Programming (CMPG111)</li>
@@ -99,12 +133,6 @@
                         <li>User Interface Programming I (CMPG122)</li>
                         <li>Financial Accounting (ACCS111, ACCS121)</li>
                         <li>Business Management & Problem Solving (BMAN111, BMAN223)</li>
-                    </ul>
-                </div>
-
-                <div class="course-category">
-                    
-                    <ul>
                         <li>Object Orientated Programming (CMPG211)</li>
                         <li>Apps and Advanced User Interface Programming (CMPG212)</li>
                         <li>System Analysis and Design I & II (CMPG213, CMPG223)</li>
@@ -113,116 +141,157 @@
                         <li>Data Structures and Algorithms (CMPG221)</li>
                         <li>Data Analytics II (CMPG222)</li>
                         <li>Discrete Mathematics (MTHS225)</li>
-                        <li>Statistics (STTN111, STTN121)</li>
-                    </ul>
-                </div>
-
-                <div class="course-category">
-                   
-                    <ul>
                         <li>Databases & Advanced Databases (CMPG311, CMPG321)</li>
                         <li>Decision Support Systems I & II (CMPG312, CMPG322)</li>
                         <li>Artificial Intelligence (CMPG313)</li>
                         <li>Computer Networks (CMPG315)</li>
                         <li>Operating Systems (CMPG324)</li>
                         <li>IT Developments (CMPG323)</li>
-                        <li>Understanding the Natural World (WVNS211, WVNS221)</li>
                     </ul>
                 </div>
-            </div>
 
-            <div class="edu-card high-school">
-                <h3>Mvenyane Senior Secondary School – National Senior Certificate</h3>
-                <p class="edu-date">2018-2022</p>
+                <div class="course-category">
+                    <h4>🎓 University of Pretoria (Current - Semester 1)</h4>
+                    <ul>
+                        <li><strong>COS700</strong> - Research Report (Part 1)</li>
+                        <li><strong>COS710</strong> - Artificial Intelligence I</li>
+                        <li><strong>COS730</strong> - Software Engineering</li>
+                        <li><strong>COS760</strong> - Natural Language Processing</li>
+                    </ul>
+                    <h4 style="margin-top: 1rem;">📖 Semester 2</h4>
+                    <ul>
+                        <li><strong>COS700</strong> - Research Report (Continuation)</li>
+                        <li><strong>COS711</strong> - Artificial Intelligence II</li>
+                        <li><strong>COS781</strong> - Data Mining</li>
+                        <li><strong>COS790</strong> - Special Topics in Computer Science</li>
+                    </ul>
+                </div>
+
+                <div class="course-category">
+                    <h4>🔧 Additional Core Competencies</h4>
+                    <ul>
+                        <li>Advanced Research Methodologies</li>
+                        <li>Machine Learning Foundations</li>
+                        <li>Deep Learning & Neural Networks (via AI modules)</li>
+                        <li>Text Analytics & NLP Techniques</li>
+                        <li>Big Data & Pattern Recognition</li>
+                        <li>Software Architecture & Design Patterns</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">TECHNICAL SKILLS</h2>
-            
-            <div class="skills-container">
-                <div class="skills-category">
-                    <h3>Programming Languages</h3>
-                    <div class="skill-tags">
+<!-- Skills Section -->
+<section id="skills" class="skills">
+    <div class="container">
+        <h2 class="section-title">TECHNICAL SKILLS</h2>
+        
+        <div class="skills-container">
+            <div class="skills-category">
+                <h3>Programming Languages</h3>
+                <div class="skill-tags with-icons">
+                    <div class="skill-icon-item">
+                        <i class="fab fa-java"></i>
                         <span>Java</span>
-                        <span>C++</span>
-                        <span>C#</span>
+                    </div>
+                    <div class="skill-icon-item">
+                        <i class="fab fa-python"></i>
                         <span>Python</span>
+                    </div>
+                    <div class="skill-icon-item">
+                        <i class="fas fa-code"></i>
+                        <span>C++</span>
+                    </div>
+                    <div class="skill-icon-item">
+                        <i class="fas fa-code-branch"></i>
+                        <span>C#</span>
+                    </div>
+                    <div class="skill-icon-item">
+                        <i class="fab fa-js"></i>
                         <span>JavaScript</span>
+                    </div>
+                    <div class="skill-icon-item">
+                        <i class="fab fa-css3-alt"></i>
+                        <span>CSS</span>
+                    </div>
+                    <div class="skill-icon-item">
+                        <i class="fab fa-react"></i>
                         <span>PERN Stack</span>
                     </div>
                 </div>
+            </div>
 
-                <div class="skills-category">
-                    <h3>SQL Databases</h3>
-                    <div class="skill-tags">
-                        <span>MySQL</span>
-                        <span>Database Design</span>
-                        <span>Database Management</span>
-                    </div>
-                </div>
-
-                <div class="skills-category">
-                    <h3>Tools</h3>
-                    <div class="skill-tags">
-                        <span>Git</span>
-                        <span>GitHub</span>
-                        <span>Visual Studio</span>
-                        <span>Code::Blocks</span>
-                        <span>Notepad++</span>
-                    </div>
-                </div>
-
-                <div class="skills-category">
-                    <h3>Productivity Tools</h3>
-                    <div class="skill-tags">
-                        <span>Microsoft Excel</span>
-                        <span>Word</span>
-                        <span>PowerPoint</span>
-                        <span>Outlook</span>
-                    </div>
-                </div>
-
-                <div class="skills-category">
-                    <h3>Core Concepts</h3>
-                    <div class="skill-tags">
-                        <span>OOP</span>
-                        <span>Databases</span>
-                        <span>Networking</span>
-                        <span>System Design</span>
-                        <span>AI Fundamentals</span>
-                    </div>
+            <div class="skills-category">
+                <h3>SQL Databases</h3>
+                <div class="skill-tags">
+                    <span>MySQL</span>
+                    <span>Database Design</span>
+                    <span>Database Management</span>
                 </div>
             </div>
 
-            <h2 class="section-title soft-skills-title">SOFT SKILLS</h2>
-            <div class="soft-skills-grid">
-                <div class="soft-skill">
-                    <i class="fas fa-lightbulb"></i>
-                    <h4>Strong problem-solving and analytical skills</h4>
+            <div class="skills-category">
+                <h3>Tools & AI/ML</h3>
+                <div class="skill-tags">
+                    <span>Git/GitHub</span>
+                    <span>Visual Studio</span>
+                    <span>Code::Blocks</span>
+                    <span>Notepad++</span>
+                    <span>Pandas/NumPy</span>
+                    <span>NLTK</span>
                 </div>
-                <div class="soft-skill">
-                    <i class="fas fa-comments"></i>
-                    <h4>Effective communication and teamwork</h4>
+            </div>
+
+            <div class="skills-category">
+                <h3>Productivity Tools</h3>
+                <div class="skill-tags">
+                    <span>Microsoft Excel</span>
+                    <span>Word</span>
+                    <span>PowerPoint</span>
+                    <span>Outlook</span>
                 </div>
-                <div class="soft-skill">
-                    <i class="fas fa-sync-alt"></i>
-                    <h4>Adaptability and continuous learning</h4>
-                </div>
-                <div class="soft-skill">
-                    <i class="fas fa-clock"></i>
-                    <h4>Time management and attention to detail</h4>
-                </div>
-                <div class="soft-skill">
-                    <i class="fas fa-star"></i>
-                    <h4>Self-motivated with strong professional ethics</h4>
+            </div>
+
+            <div class="skills-category">
+                <h3>Core Concepts</h3>
+                <div class="skill-tags">
+                    <span>OOP</span>
+                    <span>Databases</span>
+                    <span>Networking</span>
+                    <span>System Design</span>
+                    <span>AI & NLP</span>
+                    <span>Data Mining</span>
                 </div>
             </div>
         </div>
-    </section>
+
+        <h2 class="section-title soft-skills-title">SOFT SKILLS</h2>
+        <div class="soft-skills-grid">
+            <div class="soft-skill">
+                <i class="fas fa-lightbulb"></i>
+                <h4>Strong problem-solving and analytical skills</h4>
+            </div>
+            <div class="soft-skill">
+                <i class="fas fa-comments"></i>
+                <h4>Effective communication and teamwork</h4>
+            </div>
+            <div class="soft-skill">
+                <i class="fas fa-sync-alt"></i>
+                <h4>Adaptability and continuous learning</h4>
+            </div>
+            <div class="soft-skill">
+                <i class="fas fa-clock"></i>
+                <h4>Time management and attention to detail</h4>
+            </div>
+            <div class="soft-skill">
+                <i class="fas fa-star"></i>
+                <h4>Self-motivated with strong professional ethics</h4>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Projects Section -->
     <section id="projects" class="projects">
@@ -252,11 +321,11 @@
 
                 <div class="project-item">
                     <div class="project-icon">
-                        <i class="fas fa-project-diagram"></i>
+                        <i class="fas fa-robot"></i>
                     </div>
                     <div class="project-details">
-                        <h3>Algorithms & Data Structures</h3>
-                        <p>Applied data structures and algorithms to optimize applications.</p>
+                        <h3>AI & NLP Exploration</h3>
+                        <p>Implemented basic NLP pipelines and AI models as part of COS710 & COS760.</p>
                     </div>
                 </div>
 
@@ -267,16 +336,6 @@
                     <div class="project-details">
                         <h3>Object-Oriented Programming</h3>
                         <p>Built C# and Java applications using OOP principles.</p>
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-icon">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
-                    <div class="project-details">
-                        <h3>Network Simulation</h3>
-                        <p>Simulated and designed computer networks using Cisco Packet Tracer.</p>
                     </div>
                 </div>
 
@@ -293,14 +352,13 @@
                     </div>
                 </div>
 
-                <!-- ZukiChat Project Card -->
                 <div class="project-item featured">
                     <div class="project-icon">
                         <i class="fas fa-comments"></i>
                     </div>
                     <div class="project-details">
                         <h3>💬 ZukiChat</h3>
-                        <p>A real-time chat application with user authentication, private messaging, and group chat features. Built with modern web technologies for seamless communication.</p>
+                        <p>A real-time chat application with user authentication, private messaging, and group chat features.</p>
                         <div class="project-tech">
                             <span class="tech-tag">React</span>
                             <span class="tech-tag">Node.js</span>
@@ -313,20 +371,17 @@
                     </div>
                 </div>
 
-                <!-- Shopping List App Project Card -->
                 <div class="project-item featured">
                     <div class="project-icon">
                         <i class="fas fa-shopping-cart"></i>
                     </div>
                     <div class="project-details">
                         <h3>🛒 Shopping List App</h3>
-                        <p>A full-stack shopping list management app with user authentication, image uploads, and automatic price calculation. Create and manage multiple shopping lists.</p>
+                        <p>Full-stack shopping list management app with user authentication, image uploads, and automatic price calculation.</p>
                         <div class="project-tech">
                             <span class="tech-tag">React</span>
                             <span class="tech-tag">Material-UI</span>
-                            <span class="tech-tag">Node.js</span>
                             <span class="tech-tag">Supabase</span>
-                            <span class="tech-tag">Cloudinary</span>
                         </div>
                         <a href="https://github.com/ZukisaNxesi/shopping-list-app" target="_blank" class="project-link">
                             <i class="fab fa-github"></i> GitHub Repo
@@ -340,7 +395,7 @@
                     </div>
                     <div class="project-details">
                         <h3>Student Management System</h3>
-                        <p>Complete full-stack application with authentication, dark mode, and PDF reporting</p>
+                        <p>Full-stack application with authentication, dark mode, and PDF reporting</p>
                         <div class="project-links">
                             <a href="https://github.com/ZukisaNxesi/student-management-system" target="_blank" class="project-link">
                                 <i class="fab fa-github"></i> Code
@@ -360,7 +415,7 @@
         <div class="container">
             <h2 class="section-title">CAREER OBJECTIVE</h2>
             <div class="objective-card">
-                <p>To obtain an entry-level position, internship, or graduate programme in Information Technology where I can apply my technical skills and gain practical industry experience.</p>
+                <p>To obtain an entry-level position, internship, or graduate programme in Information Technology/Computer Science where I can apply my technical skills and gain practical industry experience while contributing to innovative solutions.</p>
             </div>
         </div>
     </section>
@@ -390,7 +445,7 @@
                     <div class="contact-card">
                         <i class="fas fa-map-marker-alt"></i>
                         <h3>Address</h3>
-                        <p>13th Avenue, House No. 7272<br>Rooisand, Kathu</p>
+                        <p>122 Cuckooshrike St, Rabie Ridge<br>Midrand, 1688</p>
                     </div>
                 </div>
 
