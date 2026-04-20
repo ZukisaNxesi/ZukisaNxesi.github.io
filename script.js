@@ -56,74 +56,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Download CV as PDF
+    // Download CV from file (simple version)
     const downloadBtn = document.getElementById('downloadPdfBtn');
     if (downloadBtn) {
         downloadBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            const printWindow = window.open('', '_blank');
-            printWindow.document.write(`
-                <!DOCTYPE html>
-                <html>
-                <head>
-                    <title>Zukisa Nxesi - CV</title>
-                    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-                    <style>
-                        body { font-family: 'Inter', sans-serif; padding: 2rem; max-width: 800px; margin: 0 auto; line-height: 1.6; }
-                        h1 { color: #2563eb; }
-                        h2 { color: #1e40af; border-bottom: 2px solid #2563eb; padding-bottom: 0.5rem; }
-                        .contact { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0; }
-                        .section { margin: 2rem 0; }
-                        ul { list-style: none; padding: 0; }
-                        li { margin: 0.5rem 0; }
-                    </style>
-                </head>
-                <body>
-                    <h1>ZUKISA NXESI</h1>
-                    <p>Bachelor of Science in Information Technology (BSc IT) – Graduate</p>
-                    <p>North West University | University of Pretoria (Postgraduate)</p>
-                    <div class="contact">
-                        <div>📞 071 664 4892</div>
-                        <div>📧 zukisanxesi4@gmail.com</div>
-                        <div>📍 122 Cuckooshrike St, Rabie Ridge, Midrand 1688</div>
-                    </div>
-                    <div class="section">
-                        <h2>PROFESSIONAL PROFILE</h2>
-                        <p>Information Technology graduate with strong foundation in software development, databases, and networking. Currently pursuing advanced studies in AI, Data Mining, NLP, and Software Engineering at University of Pretoria.</p>
-                    </div>
-                    <div class="section">
-                        <h2>EDUCATION</h2>
-                        <h3>North-West University – BSc Information Technology (2023-2025)</h3>
-                        <h3>University of Pretoria – Postgraduate in Computer Science (2026-Present)</h3>
-                        <h3>Mvenyane Senior Secondary School – NSC (2018-2022)</h3>
-                    </div>
-                    <div class="section">
-                        <h2>TECHNICAL SKILLS</h2>
-                        <p><strong>Programming:</strong> Java, Python, C++, C#, JavaScript, CSS, PERN Stack</p>
-                        <p><strong>Databases:</strong> MySQL, Database Design & Management</p>
-                        <p><strong>AI/ML:</strong> Pandas, NumPy, NLTK, AI Fundamentals, Data Mining</p>
-                        <p><strong>Tools:</strong> Git, GitHub, Visual Studio</p>
-                    </div>
-                    <div class="section">
-                        <h2>PROJECTS</h2>
-                        <ul>
-                            <li>• Student Management System - Full-stack app with auth, dark mode, PDF reporting</li>
-                            <li>• ZukiChat - Real-time chat app with React, Node.js, Socket.io</li>
-                            <li>• Shopping List App - Full-stack with React, Supabase, Cloudinary</li>
-                            <li>• Click-KOS - GitHub project</li>
-                        </ul>
-                    </div>
-                    <div class="section">
-                        <h2>CAREER OBJECTIVE</h2>
-                        <p>To obtain an entry-level position, internship, or graduate programme in Information Technology or Computer Science where I can apply my technical skills, AI knowledge, and gain practical industry experience while contributing to innovative solutions.</p>
-                    </div>
-                    <p><em>References available upon request.</em></p>
-                </body>
-                </html>
-            `);
-            printWindow.document.close();
-            printWindow.focus();
-            printWindow.print();
+            // Just let the download attribute handle it
+            console.log('Downloading CV file...');
         });
     }
 
