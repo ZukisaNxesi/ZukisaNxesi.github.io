@@ -1,489 +1,586 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zukisa Nxesi - IT Graduate CV</title>
+    <title>Zukisa Nxesi – Software Developer & CS Graduate</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
-
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">ZN</div>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#profile">Profile</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="theme-toggle" id="themeToggle">
-                <i class="fas fa-moon"></i>
-            </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="animate-text">ZUKISA <span class="highlight">NXESI</span></h1>
-            <h2 class="animate-text delay-1">Bachelor of Science in Information Technology (BSc IT) – Graduate</h2>
-            <p class="animate-text delay-2">North West University | University of Pretoria (Postgraduate)</p>
-             <div class="hero-buttons animate-text delay-3">
-            <a href="#contact" class="btn primary">Hire Me</a>
-            <a href="files/Zukisa_Nxesi_CV.pdf" download="Zukisa_Nxesi_CV.pdf" class="btn secondary" id="downloadPdfBtn">
-            <i class="fas fa-download"></i> Download CV (PDF)
+<!-- ─── PARTICLE CANVAS BACKGROUND ─── -->
+<canvas id="bgCanvas"></canvas>
+
+<!-- ─── NAVBAR ─── -->
+<nav class="navbar">
+    <div class="nav-inner">
+        <div class="logo"><span class="logo-bracket">&lt;</span>ZN<span class="logo-bracket">/&gt;</span></div>
+        <ul class="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="theme-btn" id="themeToggle" aria-label="Toggle theme">
+            <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section id="home" class="hero">
+    <div class="hero-content">
+        <p class="hero-eyebrow">👋 Hello, I'm</p>
+        <h1 class="hero-name">
+            <span class="name-word" data-delay="0">Zukisa</span>
+            <span class="name-word accent" data-delay="150">Nxesi</span>
+        </h1>
+        <div class="hero-title-wrap">
+            <span class="typing-cursor"></span>
+            <span id="typingText" class="typing-text"></span>
+        </div>
+        <p class="hero-sub">North West University (BSc IT) · University of Pretoria (Honours CS)</p>
+        <div class="hero-socials">
+            <a href="https://github.com/ZukisaNxesi" target="_blank" class="social-pill github">
+                <i class="fab fa-github"></i> GitHub
             </a>
-</div>
+            <a href="https://www.linkedin.com/in/zukisa-nxesi" target="_blank" class="social-pill linkedin">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
         </div>
-        <div class="hero-scroll">
-            <span>Scroll Down</span>
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </section>
-
-    <!-- Contact Bar -->
-    <div class="contact-bar">
-        <div class="contact-item">
-            <i class="fas fa-phone"></i>
-            <span>071 664 4892</span>
-        </div>
-        <div class="contact-item">
-            <i class="fas fa-envelope"></i>
-            <span>zukisanxesi4@gmail.com</span>
-        </div>
-        <div class="contact-item">
-            <i class="fab fa-linkedin"></i>
-            <span>Zukisa Nxesi</span>
-        </div>
-        <div class="contact-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <span>122 Cuckooshrike St, Rabie Ridge, Midrand 1688</span>
+        <div class="hero-cta">
+            <a href="#contact" class="btn-primary">Hire Me</a>
+            <a href="files/Zukisa_Nxesi_CV.pdf" download class="btn-outline">
+                <i class="fas fa-download"></i> Download CV
+            </a>
         </div>
     </div>
 
-    <!-- Professional Profile with Profile Picture -->
-    <section id="profile" class="profile">
-        <div class="container">
-            <h2 class="section-title">PROFESSIONAL PROFILE</h2>
-            <!-- Profile Picture and Intro -->
-            <div class="profile-header">
-                <img src="images/profile.png" alt="Zukisa Nxesi" class="profile-pic" id="profilePic">
-                <div class="profile-header-text">
-                    <h3>Zukisa Nxesi</h3>
-                    <p>BSc IT Graduate | Aspiring Software Developer</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Based in Midrand, South Africa</p>
-                </div>
-            </div>
-            <div class="profile-content">
-                <p>Information Technology graduate with a strong academic foundation in software development, system analysis and design, databases, and networking. Currently pursuing advanced studies at the University of Pretoria focusing on Artificial Intelligence, Data Mining, NLP, and Software Engineering. Motivated, adaptable, and eager to contribute technical skills in a professional environment while continuously expanding knowledge.</p>
-            </div>
+    <!-- Profile image with rotating ring -->
+    <div class="hero-image-wrap">
+        <div class="orbit-ring ring-1"></div>
+        <div class="orbit-ring ring-2"></div>
+        <div class="orbit-dot dot-1"></div>
+        <div class="orbit-dot dot-2"></div>
+        <div class="profile-frame">
+            <img src="images/profile.png" alt="Zukisa Nxesi" class="hero-profile-pic">
         </div>
-    </section>
-
-    <!-- Education & Courses -->
-    <section id="education" class="education">
-        <div class="container">
-            <h2 class="section-title">EDUCATION</h2>
-            
-            <!-- North-West University -->
-            <div class="edu-card">
-                <img src="images/nwu-logo.png" alt="NWU Logo" class="school-logo">
-                <div class="edu-content">
-                    <h3>North-West University – Bachelor of Science in Information Technology</h3>
-                    <p class="edu-date">2023-2025 | Graduated</p>
-                </div>
-            </div>
-
-            <!-- University of Pretoria (Current) -->
-            <div class="edu-card">
-                <img src="images/up-logo.jpg" alt="University of Pretoria Logo" class="school-logo">
-                <div class="edu-content">
-                    <h3>University of Pretoria – Postgraduate / Honours in Computer Science (Current) <span class="current-badge">Current Student</span></h3>
-                    <p class="edu-date">2026 - Present</p>
-                </div>
-            </div>
-
-            <!-- High School -->
-            <div class="edu-card high-school">
-                <img src="images/mvenyane-logo.jpg" alt="Mvenyane Senior Secondary School Logo" class="school-logo" id="highSchoolLogo">
-                <div class="edu-content">
-                    <h3>Mvenyane Senior Secondary School – National Senior Certificate</h3>
-                    <p class="edu-date">2018-2022</p>
-                </div>
-            </div>
-
-            <!-- COURSES SECTION -->
-            <h3 class="subsection-title">COURSES & MODULES</h3>
-            
-            <div class="courses-grid">
-                <div class="course-category">
-                    <h4>📘 North-West University (BSc IT)</h4>
-                    <ul>
-                        <li>Academic Literacy Development (ALDE111, ALDE122)</li>
-                        <li>Introduction to Computing and Programming (CMPG111)</li>
-                        <li>Structured Programming (CMPG121)</li>
-                        <li>User Interface Programming I (CMPG122)</li>
-                        <li>Financial Accounting (ACCS111, ACCS121)</li>
-                        <li>Business Management & Problem Solving (BMAN111, BMAN223)</li>
-                        <li>Object Orientated Programming (CMPG211)</li>
-                        <li>Apps and Advanced User Interface Programming (CMPG212)</li>
-                        <li>System Analysis and Design I & II (CMPG213, CMPG223)</li>
-                        <li>Communication Skills (CMPG214)</li>
-                        <li>Information Security (CMPG215)</li>
-                        <li>Data Structures and Algorithms (CMPG221)</li>
-                        <li>Data Analytics II (CMPG222)</li>
-                        <li>Discrete Mathematics (MTHS225)</li>
-                        <li>Databases & Advanced Databases (CMPG311, CMPG321)</li>
-                        <li>Decision Support Systems I & II (CMPG312, CMPG322)</li>
-                        <li>Artificial Intelligence (CMPG313)</li>
-                        <li>Computer Networks (CMPG315)</li>
-                        <li>Operating Systems (CMPG324)</li>
-                        <li>IT Developments (CMPG323)</li>
-                    </ul>
-                </div>
-
-                <div class="course-category">
-                    <h4>🎓 University of Pretoria (Current - Semester 1)</h4>
-                    <ul>
-                        <li><strong>COS700</strong> - Research Report (Part 1)</li>
-                        <li><strong>COS710</strong> - Artificial Intelligence I</li>
-                        <li><strong>COS730</strong> - Software Engineering</li>
-                        <li><strong>COS760</strong> - Natural Language Processing</li>
-                    </ul>
-                    <h4 style="margin-top: 1rem;">📖 Semester 2</h4>
-                    <ul>
-                        <li><strong>COS700</strong> - Research Report (Continuation)</li>
-                        <li><strong>COS711</strong> - Artificial Intelligence II</li>
-                        <li><strong>COS781</strong> - Data Mining</li>
-                        <li><strong>COS790</strong> - Special Topics in Computer Science</li>
-                    </ul>
-                </div>
-
-                <div class="course-category">
-                    <h4>🔧 Additional Core Competencies</h4>
-                    <ul>
-                        <li>Advanced Research Methodologies</li>
-                        <li>Machine Learning Foundations</li>
-                        <li>Deep Learning & Neural Networks (via AI modules)</li>
-                        <li>Text Analytics & NLP Techniques</li>
-                        <li>Big Data & Pattern Recognition</li>
-                        <li>Software Architecture & Design Patterns</li>
-                    </ul>
-                </div>
-            </div>
+        <!-- Stats floating cards -->
+        <div class="stat-card stat-top">
+            <span class="stat-num">5+</span>
+            <span class="stat-label">Projects</span>
         </div>
-    </section>
+        <div class="stat-card stat-mid">
+            <span class="stat-num">7+</span>
+            <span class="stat-label">Languages</span>
+        </div>
+        <div class="stat-card stat-bot">
+            <span class="stat-num">2026</span>
+            <span class="stat-label">Honours</span>
+        </div>
+    </div>
 
-    <!-- Skills Section -->
-<!-- Skills Section -->
-<section id="skills" class="skills">
+    <a href="#profile" class="scroll-hint">
+        <span>Scroll</span>
+        <i class="fas fa-chevron-down"></i>
+    </a>
+</section>
+
+<!-- ─── CONTACT BAR ─── -->
+<div class="contact-bar">
+    <span class="cb-item"><i class="fas fa-envelope"></i> zukisanxesi4@gmail.com</span>
+    <span class="cb-sep">|</span>
+    <a href="https://www.linkedin.com/in/zukisa-nxesi" target="_blank" class="cb-item"><i class="fab fa-linkedin"></i> Zukisa Nxesi</a>
+    <span class="cb-sep">|</span>
+    <a href="https://github.com/ZukisaNxesi" target="_blank" class="cb-item"><i class="fab fa-github"></i> ZukisaNxesi</a>
+    <span class="cb-sep">|</span>
+    <span class="cb-item"><i class="fas fa-map-marker-alt"></i> Midrand, South Africa</span>
+</div>
+
+<!-- ─── PROFILE ─── -->
+<section id="profile" class="section">
     <div class="container">
-        <h2 class="section-title">TECHNICAL SKILLS</h2>
-        
-        <div class="skills-container">
-            <div class="skills-category">
-                <h3>Programming Languages</h3>
-                <div class="skill-tags with-icons">
-                    <div class="skill-icon-item">
-                        <i class="fab fa-java"></i>
-                        <span>Java</span>
+        <h2 class="section-title">Professional Profile</h2>
+        <div class="profile-grid">
+            <div class="profile-left">
+                <div class="profile-pic-wrap">
+                    <svg class="rotating-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <path id="circle-text" d="M 100,100 m -75,0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0"/>
+                        </defs>
+                        <text class="svg-orbit-text" font-size="11" fill="currentColor" letter-spacing="4">
+                            <textPath href="#circle-text">SOFTWARE DEVELOPER · CS GRADUATE · AI ENTHUSIAST · </textPath>
+                        </text>
+                    </svg>
+                    <img src="images/profile.png" alt="Zukisa Nxesi" class="profile-pic-main">
+                </div>
+                <!-- Quick stats -->
+                <div class="quick-stats">
+                    <div class="qs-item">
+                        <span class="qs-num" data-target="5">0</span>
+                        <span class="qs-label">GitHub Projects</span>
                     </div>
-                    <div class="skill-icon-item">
-                        <i class="fab fa-python"></i>
-                        <span>Python</span>
+                    <div class="qs-item">
+                        <span class="qs-num" data-target="7">0</span>
+                        <span class="qs-label">Languages</span>
                     </div>
-                    <div class="skill-icon-item">
-                        <i class="fas fa-code"></i>
-                        <span>C++</span>
+                    <div class="qs-item">
+                        <span class="qs-num" data-target="3">0</span>
+                        <span class="qs-label">Years Coding</span>
                     </div>
-                    <div class="skill-icon-item">
-                        <i class="fas fa-code-branch"></i>
-                        <span>C#</span>
-                    </div>
-                    <div class="skill-icon-item">
-                        <i class="fab fa-js"></i>
-                        <span>JavaScript</span>
-                    </div>
-                    <div class="skill-icon-item">
-                        <i class="fab fa-css3-alt"></i>
-                        <span>CSS</span>
-                    </div>
-                    <div class="skill-icon-item">
-                        <i class="fab fa-react"></i>
-                        <span>PERN Stack</span>
+                    <div class="qs-item">
+                        <span class="qs-num" data-target="4">0</span>
+                        <span class="qs-label">AI Modules</span>
                     </div>
                 </div>
-            </div>
-
-            <div class="skills-category">
-                <h3>SQL Databases</h3>
-                <div class="skill-tags">
-                    <span>MySQL</span>
-                    <span>Database Design</span>
-                    <span>Database Management</span>
+                <div class="profile-socials">
+                    <a href="https://github.com/ZukisaNxesi" target="_blank" class="ps-link">
+                        <i class="fab fa-github"></i>
+                        <span>github.com/ZukisaNxesi</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/zukisa-nxesi" target="_blank" class="ps-link">
+                        <i class="fab fa-linkedin"></i>
+                        <span>linkedin.com/in/zukisa-nxesi</span>
+                    </a>
+                    <a href="mailto:zukisanxesi4@gmail.com" class="ps-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>zukisanxesi4@gmail.com</span>
+                    </a>
                 </div>
             </div>
-
-            <div class="skills-category">
-                <h3>Tools & AI/ML</h3>
-                <div class="skill-tags">
-                    <span>Git/GitHub</span>
-                    <span>Visual Studio</span>
-                    <span>Code::Blocks</span>
-                    <span>Notepad++</span>
-                    <span>Pandas/NumPy</span>
-                    <span>NLTK</span>
+            <div class="profile-right">
+                <div class="profile-summary">
+                    <p>Information Technology graduate with a strong academic foundation in software development, system analysis and design, databases, and networking. Currently pursuing Honours in Computer Science at the University of Pretoria, focusing on Artificial Intelligence, Data Mining, NLP, and Software Engineering.</p>
+                    <p>Motivated, adaptable, and eager to contribute technical skills in a professional environment while continuously expanding knowledge and building impactful solutions.</p>
                 </div>
-            </div>
-
-            <div class="skills-category">
-                <h3>Productivity Tools</h3>
-                <div class="skill-tags">
-                    <span>Microsoft Excel</span>
-                    <span>Word</span>
-                    <span>PowerPoint</span>
-                    <span>Outlook</span>
+                <div class="availability-badge">
+                    <span class="pulse-dot"></span>
+                    Available for internships & graduate programmes
                 </div>
-            </div>
-
-            <div class="skills-category">
-                <h3>Core Concepts</h3>
-                <div class="skill-tags">
-                    <span>OOP</span>
-                    <span>Databases</span>
-                    <span>Networking</span>
-                    <span>System Design</span>
-                    <span>AI & NLP</span>
-                    <span>Data Mining</span>
+                <div class="fun-facts">
+                    <div class="ff-item"><i class="fas fa-map-marker-alt"></i> Based in Midrand, South Africa</div>
+                    <div class="ff-item"><i class="fas fa-graduation-cap"></i> BSc IT + Honours CS (2026)</div>
+                    <div class="ff-item"><i class="fas fa-brain"></i> AI & NLP Enthusiast</div>
+                    <div class="ff-item"><i class="fas fa-code"></i> Full-Stack Developer</div>
                 </div>
-            </div>
-        </div>
-
-        <h2 class="section-title soft-skills-title">SOFT SKILLS</h2>
-        <div class="soft-skills-grid">
-            <div class="soft-skill">
-                <i class="fas fa-lightbulb"></i>
-                <h4>Strong problem-solving and analytical skills</h4>
-            </div>
-            <div class="soft-skill">
-                <i class="fas fa-comments"></i>
-                <h4>Effective communication and teamwork</h4>
-            </div>
-            <div class="soft-skill">
-                <i class="fas fa-sync-alt"></i>
-                <h4>Adaptability and continuous learning</h4>
-            </div>
-            <div class="soft-skill">
-                <i class="fas fa-clock"></i>
-                <h4>Time management and attention to detail</h4>
-            </div>
-            <div class="soft-skill">
-                <i class="fas fa-star"></i>
-                <h4>Self-motivated with strong professional ethics</h4>
             </div>
         </div>
     </div>
 </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">PROJECTS & PRACTICAL EXPERIENCE</h2>
-            
-            <div class="projects-list">
-                <div class="project-item">
-                    <div class="project-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <div class="project-details">
-                        <h3>Software Development</h3>
-                        <p>Developed software systems using Java, C++, and C#.</p>
-                    </div>
-                </div>
+<!-- ─── EDUCATION ─── -->
+<section id="education" class="section alt-section">
+    <div class="container">
+        <h2 class="section-title">Education</h2>
+        <div class="edu-timeline">
 
-                <div class="project-item">
-                    <div class="project-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <div class="project-details">
-                        <h3>Database Management</h3>
-                        <p>Designed and managed SQL databases with complex queries.</p>
-                    </div>
+            <div class="edu-card current">
+                <div class="edu-year-badge current-badge-pill">Current</div>
+                <div class="edu-logo-wrap">
+                    <img src="images/up-logo.jpg" alt="University of Pretoria" class="school-logo">
                 </div>
-
-                <div class="project-item">
-                    <div class="project-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <div class="project-details">
-                        <h3>AI & NLP Exploration</h3>
-                        <p>Implemented basic NLP pipelines and AI models as part of COS710 & COS760.</p>
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-icon">
-                        <i class="fas fa-cube"></i>
-                    </div>
-                    <div class="project-details">
-                        <h3>Object-Oriented Programming</h3>
-                        <p>Built C# and Java applications using OOP principles.</p>
-                    </div>
-                </div>
-
-                <div class="project-item featured">
-                    <div class="project-icon">
-                        <i class="fab fa-github"></i>
-                    </div>
-                    <div class="project-details">
-                        <h3>GitHub Project: Click-KOS</h3>
-                        <p>Full-stack application development</p>
-                        <a href="https://github.com/ZukisaNxesi/click-kos" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View Repository
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-item featured">
-                    <div class="project-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <div class="project-details">
-                        <h3>💬 ZukiChat</h3>
-                        <p>A real-time chat application with user authentication, private messaging, and group chat features.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">Socket.io</span>
-                            <span class="tech-tag">MongoDB</span>
-                        </div>
-                        <a href="https://github.com/ZukisaNxesi/ZukiChat" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> GitHub Repo
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-item featured">
-                    <div class="project-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <div class="project-details">
-                        <h3>🛒 Shopping List App</h3>
-                        <p>Full-stack shopping list management app with user authentication, image uploads, and automatic price calculation.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Material-UI</span>
-                            <span class="tech-tag">Supabase</span>
-                        </div>
-                        <a href="https://github.com/ZukisaNxesi/shopping-list-app" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> GitHub Repo
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-item featured">
-                    <div class="project-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="project-details">
-                        <h3>Student Management System</h3>
-                        <p>Full-stack application with authentication, dark mode, and PDF reporting</p>
-                        <div class="project-links">
-                            <a href="https://github.com/ZukisaNxesi/student-management-system" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                            <a href="https://student-management-system-4951.onrender.com" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
-                        </div>
+                <div class="edu-info">
+                    <h3>University of Pretoria</h3>
+                    <p class="edu-degree">Honours in Computer Science</p>
+                    <p class="edu-period">2026 – Present</p>
+                    <div class="edu-modules">
+                        <span>COS710 – AI I</span>
+                        <span>COS760 – NLP</span>
+                        <span>COS730 – Software Eng.</span>
+                        <span>COS700 – Research Report</span>
+                        <span>COS711 – AI II</span>
+                        <span>COS781 – Data Mining</span>
+                        <span>COS790 – Special Topics</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Career Objective -->
-    <section class="career-objective">
-        <div class="container">
-            <h2 class="section-title">CAREER OBJECTIVE</h2>
-            <div class="objective-card">
-                <p>To obtain an entry-level position, internship, or graduate programme in Information Technology/Computer Science where I can apply my technical skills and gain practical industry experience while contributing to innovative solutions.</p>
+            <div class="edu-card">
+                <div class="edu-year-badge">2023–2025</div>
+                <div class="edu-logo-wrap">
+                    <img src="images/nwu-logo.png" alt="NWU" class="school-logo">
+                </div>
+                <div class="edu-info">
+                    <h3>North-West University</h3>
+                    <p class="edu-degree">Bachelor of Science in Information Technology</p>
+                    <p class="edu-period">2023 – 2025 · Graduated</p>
+                </div>
+            </div>
+
+            <div class="edu-card">
+                <div class="edu-year-badge">2018–2022</div>
+                <div class="edu-logo-wrap">
+                    <img src="images/mvenyane-logo.jpg" alt="Mvenyane SSS" class="school-logo">
+                </div>
+                <div class="edu-info">
+                    <h3>Mvenyane Senior Secondary School</h3>
+                    <p class="edu-degree">National Senior Certificate</p>
+                    <p class="edu-period">2018 – 2022</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ─── SKILLS ─── -->
+<section id="skills" class="section">
+    <div class="container">
+        <h2 class="section-title">Technical Skills</h2>
+
+        <!-- Programming Languages -->
+        <div class="skills-block">
+            <h3 class="skills-block-title"><i class="fas fa-code"></i> Programming Languages</h3>
+            <div class="lang-grid">
+
+                <div class="lang-card">
+                    <i class="devicon-java-plain colored"></i>
+                    <span class="lang-name">Java</span>
+                    <div class="skill-bar-track">
+                        <div class="skill-bar-fill" data-pct="80"></div>
+                    </div>
+                    <span class="skill-pct">80%</span>
+                </div>
+
+                <div class="lang-card">
+                    <i class="devicon-python-plain colored"></i>
+                    <span class="lang-name">Python</span>
+                    <div class="skill-bar-track">
+                        <div class="skill-bar-fill" data-pct="50"></div>
+                    </div>
+                    <span class="skill-pct">50%</span>
+                </div>
+
+                <div class="lang-card">
+                    <i class="devicon-cplusplus-plain colored"></i>
+                    <span class="lang-name">C++</span>
+                    <div class="skill-bar-track">
+                        <div class="skill-bar-fill" data-pct="65"></div>
+                    </div>
+                    <span class="skill-pct">65%</span>
+                </div>
+
+                <div class="lang-card">
+                    <i class="devicon-javascript-plain colored"></i>
+                    <span class="lang-name">JavaScript</span>
+                    <div class="skill-bar-track">
+                        <div class="skill-bar-fill" data-pct="40"></div>
+                    </div>
+                    <span class="skill-pct">40%</span>
+                </div>
+
+                <div class="lang-card">
+                    <i class="devicon-css3-plain colored"></i>
+                    <span class="lang-name">CSS</span>
+                    <div class="skill-bar-track">
+                        <div class="skill-bar-fill" data-pct="40"></div>
+                    </div>
+                    <span class="skill-pct">40%</span>
+                </div>
+
+                <div class="lang-card">
+                    <i class="devicon-react-original colored"></i>
+                    <span class="lang-name">React</span>
+                    <div class="skill-bar-track">
+                        <div class="skill-bar-fill" data-pct="35"></div>
+                    </div>
+                    <span class="skill-pct">35%</span>
+                </div>
+
+                <div class="lang-card">
+                    <i class="devicon-html5-plain colored"></i>
+                    <span class="lang-name">HTML</span>
+                    <div class="skill-bar-track">
+                        <div class="skill-bar-fill" data-pct="70"></div>
+                    </div>
+                    <span class="skill-pct">70%</span>
+                </div>
+
             </div>
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">GET IN TOUCH</h2>
-            
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <i class="fas fa-phone"></i>
-                        <h3>Phone</h3>
-                        <p>071 664 4892</p>
+        <!-- Databases -->
+        <div class="skills-block">
+            <h3 class="skills-block-title"><i class="fas fa-database"></i> Databases</h3>
+            <div class="db-grid">
+                <div class="db-card">
+                    <i class="devicon-mysql-plain colored"></i>
+                    <span>MySQL</span>
+                </div>
+                <div class="db-card">
+                    <i class="devicon-oracle-original colored"></i>
+                    <span>Oracle</span>
+                </div>
+                <div class="db-card">
+                    <i class="devicon-postgresql-plain colored"></i>
+                    <span>PostgreSQL</span>
+                </div>
+                <div class="db-card">
+                    <i class="devicon-mongodb-plain colored"></i>
+                    <span>MongoDB</span>
+                </div>
+                <div class="db-card">
+                    <i class="fas fa-layer-group"></i>
+                    <span>NoSQL</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tools & AI/ML -->
+        <div class="skills-block">
+            <h3 class="skills-block-title"><i class="fas fa-tools"></i> Tools & AI/ML</h3>
+            <div class="tools-wrap">
+                <div class="tool-chip"><i class="devicon-git-plain colored"></i> Git/GitHub</div>
+                <div class="tool-chip"><i class="devicon-vscode-plain colored"></i> VS Code</div>
+                <div class="tool-chip"><i class="devicon-visualstudio-plain colored"></i> Visual Studio</div>
+                <div class="tool-chip"><i class="fas fa-terminal"></i> Code::Blocks</div>
+                <div class="tool-chip"><i class="devicon-pandas-plain colored"></i> Pandas</div>
+                <div class="tool-chip"><i class="devicon-numpy-plain colored"></i> NumPy</div>
+                <div class="tool-chip"><i class="fas fa-language"></i> NLTK</div>
+                <div class="tool-chip"><i class="devicon-jupyter-plain colored"></i> Jupyter</div>
+            </div>
+        </div>
+
+        <!-- Additional Core Competencies -->
+        <div class="skills-block">
+            <h3 class="skills-block-title"><i class="fas fa-star"></i> Additional Core Competencies</h3>
+            <div class="competency-grid">
+                <div class="comp-card"><i class="fas fa-chart-bar"></i><span>Data Analysis</span></div>
+                <div class="comp-card"><i class="fas fa-sitemap"></i><span>System Analysis</span></div>
+                <div class="comp-card"><i class="fas fa-database"></i><span>Database Management</span></div>
+                <div class="comp-card"><i class="fas fa-project-diagram"></i><span>System Design</span></div>
+                <div class="comp-card"><i class="fas fa-robot"></i><span>AI & NLP</span></div>
+                <div class="comp-card"><i class="fas fa-search"></i><span>Data Mining</span></div>
+                <div class="comp-card"><i class="fas fa-network-wired"></i><span>Networking</span></div>
+                <div class="comp-card"><i class="fas fa-shield-alt"></i><span>Information Security</span></div>
+                <div class="comp-card"><i class="fas fa-code-branch"></i><span>OOP</span></div>
+                <div class="comp-card"><i class="fas fa-brain"></i><span>Machine Learning</span></div>
+                <div class="comp-card"><i class="fas fa-layer-group"></i><span>Software Architecture</span></div>
+                <div class="comp-card"><i class="fas fa-microscope"></i><span>Research Methods</span></div>
+            </div>
+        </div>
+
+        <!-- Soft Skills -->
+        <h2 class="section-title" style="margin-top:4rem;">Soft Skills</h2>
+        <div class="soft-skills-grid">
+            <div class="soft-card"><i class="fas fa-lightbulb"></i><h4>Problem-Solving & Analytical Thinking</h4></div>
+            <div class="soft-card"><i class="fas fa-comments"></i><h4>Effective Communication & Teamwork</h4></div>
+            <div class="soft-card"><i class="fas fa-sync-alt"></i><h4>Adaptability & Continuous Learning</h4></div>
+            <div class="soft-card"><i class="fas fa-clock"></i><h4>Time Management & Attention to Detail</h4></div>
+            <div class="soft-card"><i class="fas fa-fire"></i><h4>Self-Motivated & Strong Work Ethic</h4></div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ─── PROJECTS ─── -->
+<section id="projects" class="section alt-section">
+    <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+
+            <div class="project-card featured">
+                <div class="project-card-top">
+                    <div class="project-icon-wrap"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="project-links-top">
+                        <a href="https://github.com/ZukisaNxesi/student-management-system" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://student-management-system-4951.onrender.com" target="_blank" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
                     </div>
-                    <div class="contact-card">
-                        <i class="fas fa-envelope"></i>
-                        <h3>Email</h3>
+                </div>
+                <h3>Student Management System</h3>
+                <p>Full-stack application with authentication, dark mode, and PDF reporting. Manages student records end-to-end.</p>
+                <div class="project-tags">
+                    <span>React</span><span>Node.js</span><span>PostgreSQL</span><span>PDF</span>
+                </div>
+                <span class="project-badge">Live Demo ↗</span>
+            </div>
+
+            <div class="project-card featured">
+                <div class="project-card-top">
+                    <div class="project-icon-wrap"><i class="fas fa-comments"></i></div>
+                    <div class="project-links-top">
+                        <a href="https://github.com/ZukisaNxesi/ZukiChat" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <h3>ZukiChat 💬</h3>
+                <p>Real-time chat application with user authentication, private messaging, and group chat features built with Socket.io.</p>
+                <div class="project-tags">
+                    <span>React</span><span>Node.js</span><span>Socket.io</span><span>MongoDB</span>
+                </div>
+            </div>
+
+            <div class="project-card featured">
+                <div class="project-card-top">
+                    <div class="project-icon-wrap"><i class="fas fa-shopping-cart"></i></div>
+                    <div class="project-links-top">
+                        <a href="https://github.com/ZukisaNxesi/shopping-list-app" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <h3>Shopping List App 🛒</h3>
+                <p>Full-stack app with user authentication, image uploads, and automatic price calculation built on Supabase.</p>
+                <div class="project-tags">
+                    <span>React</span><span>Material-UI</span><span>Supabase</span>
+                </div>
+            </div>
+
+            <div class="project-card featured">
+                <div class="project-card-top">
+                    <div class="project-icon-wrap"><i class="fas fa-briefcase"></i></div>
+                    <div class="project-links-top">
+                        <a href="https://github.com/ZukisaNxesi/job-tracker" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <h3>Job Application Tracker 📋</h3>
+                <p>Track and manage job applications with status updates, notes, and analytics to stay organised during your job search.</p>
+                <div class="project-tags">
+                    <span>React</span><span>Node.js</span><span>MongoDB</span>
+                </div>
+            </div>
+
+            <div class="project-card featured">
+                <div class="project-card-top">
+                    <div class="project-icon-wrap"><i class="fas fa-cube"></i></div>
+                    <div class="project-links-top">
+                        <a href="https://github.com/ZukisaNxesi/click-kos" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <h3>Click-KOS</h3>
+                <p>Full-stack application development project — a comprehensive platform built as part of academic coursework and personal growth.</p>
+                <div class="project-tags">
+                    <span>Full-Stack</span><span>JavaScript</span>
+                </div>
+            </div>
+
+            <div class="project-card featured chatbot-card">
+                <div class="project-card-top">
+                    <div class="project-icon-wrap"><i class="fas fa-robot"></i></div>
+                    <div class="project-links-top">
+                        <!-- Link will be added once repo is created -->
+                        <a href="#" class="coming-soon-link" title="Coming Soon"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <h3>AI Chatbot 🤖</h3>
+                <p>Intelligent chatbot developed as part of AI coursework. Features natural language understanding and contextual responses.</p>
+                <div class="project-tags">
+                    <span>Python</span><span>NLP</span><span>AI</span>
+                </div>
+                <span class="project-badge coming">Repo Coming Soon</span>
+            </div>
+
+        </div>
+
+        <!-- Chatbot repo instructions -->
+        <div class="chatbot-instructions">
+            <h4><i class="fas fa-info-circle"></i> How to upload your ChatBot project to GitHub:</h4>
+            <ol>
+                <li>Go to <a href="https://github.com/new" target="_blank">github.com/new</a> and create a new repository named <code>ai-chatbot</code></li>
+                <li>On your computer, open terminal/command prompt in your chatbot project folder</li>
+                <li>Run: <code>git init</code> → <code>git add .</code> → <code>git commit -m "Initial commit"</code></li>
+                <li>Run: <code>git remote add origin https://github.com/ZukisaNxesi/ai-chatbot.git</code></li>
+                <li>Run: <code>git push -u origin main</code></li>
+                <li>Then replace the <code>#</code> in the chatbot card link above with <code>https://github.com/ZukisaNxesi/ai-chatbot</code></li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<!-- ─── CAREER OBJECTIVE ─── -->
+<section class="section career-obj">
+    <div class="container">
+        <h2 class="section-title">Career Objective</h2>
+        <div class="obj-card">
+            <div class="obj-icon"><i class="fas fa-rocket"></i></div>
+            <p>To obtain an entry-level position, internship, or graduate programme in Information Technology / Computer Science where I can apply my technical skills and gain practical industry experience while contributing to innovative solutions.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section id="contact" class="section alt-section">
+    <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-grid">
+            <div class="contact-info-side">
+                <div class="ci-card">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
                         <p>zukisanxesi4@gmail.com</p>
                     </div>
-                    <div class="contact-card">
-                        <i class="fab fa-linkedin"></i>
-                        <h3>LinkedIn</h3>
-                        <p>Zukisa Nxesi</p>
-                    </div>
-                    <div class="contact-card">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <h3>Address</h3>
-                        <p>122 Cuckooshrike St, Rabie Ridge<br>Midrand, 1688</p>
+                </div>
+                <div class="ci-card">
+                    <i class="fab fa-linkedin"></i>
+                    <div>
+                        <h4>LinkedIn</h4>
+                        <a href="https://www.linkedin.com/in/zukisa-nxesi" target="_blank">linkedin.com/in/zukisa-nxesi</a>
                     </div>
                 </div>
-
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <div class="ci-card">
+                    <i class="fab fa-github"></i>
+                    <div>
+                        <h4>GitHub</h4>
+                        <a href="https://github.com/ZukisaNxesi" target="_blank">github.com/ZukisaNxesi</a>
                     </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="ci-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Location</h4>
+                        <p>Midrand, South Africa</p>
                     </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn primary">Send Message</button>
-                </form>
+                </div>
             </div>
-        </div>
-    </section>
 
-    <!-- References -->
-    <section class="references">
-        <div class="container">
-            <h2 class="section-title">REFERENCES</h2>
-            <p class="references-text">Available upon request.</p>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Hello Zukisa, I'd like to discuss..." rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary" id="submitBtn">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+            </form>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 Zukisa Nxesi. All rights reserved.</p>
-            <p>Built with <i class="fas fa-heart"></i> and deployed on GitHub Pages</p>
+<!-- ─── REFERENCES ─── -->
+<section class="section references-sec">
+    <div class="container" style="text-align:center">
+        <h2 class="section-title">References</h2>
+        <p class="refs-text">Available upon request.</p>
+    </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-logo"><span class="logo-bracket">&lt;</span>ZN<span class="logo-bracket">/&gt;</span></div>
+        <p>© 2025 Zukisa Nxesi · Built with <i class="fas fa-heart" style="color:#f87171"></i> · Deployed on GitHub Pages</p>
+        <div class="footer-links">
+            <a href="https://github.com/ZukisaNxesi" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/zukisa-nxesi" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:zukisanxesi4@gmail.com"><i class="fas fa-envelope"></i></a>
         </div>
-    </footer>
+    </div>
+</footer>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
