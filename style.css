@@ -826,7 +826,14 @@ footer p { font-size: 0.85rem; color: var(--text-muted); }
     .nav-menu li a { display: block; padding: 0.8rem 2rem; font-size: 1rem; }
     .hamburger { display: flex; }
     .hero-name { font-size: 2.5rem; justify-content: center; }
-    .hero-image-wrap { display: none; }
+    .hero-image-wrap {
+        width: 220px;
+        height: 220px;
+    }
+    .ring-1 { width: 200px; height: 200px; }
+    .ring-2 { width: 240px; height: 240px; }
+    .profile-frame { width: 150px; height: 150px; }
+    .stat-top, .stat-mid, .stat-bot { display: none; }
     .lang-grid { grid-template-columns: repeat(2, 1fr); }
     .contact-grid { grid-template-columns: 1fr; }
     .obj-card { flex-direction: column; text-align: center; padding: 2rem; }
